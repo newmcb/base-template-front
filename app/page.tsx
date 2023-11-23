@@ -1,3 +1,10 @@
+import InputText from '@/components/InputText';
+
 export default function Home() {
-  return <>1234sadfkjlaksd jflksdflkj salkd fj sad fklaj s f sad f asdf</>;
+  return (
+    <>
+      메인 페이지
+      <InputText />
+    </>
+  );
 }

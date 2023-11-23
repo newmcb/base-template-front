@@ -6,6 +6,7 @@ import Header from '@/components/layout/Header';
 import ReactQueryProvider from '@/lib/providers/ReactQueryProvider';
 import { CookiesProvider } from 'react-cookie';
 import { RecoilRoot } from 'recoil';
+import Footer from '@/components/layout/Footer';
 
 export default function RootLayout({
   children,
@@ -20,7 +21,7 @@ export default function RootLayout({
             <ReactQueryProvider>
               <Header />
               {children}
-              {/* <Footer /> */}
+              <Footer />
             </ReactQueryProvider>
           </CookiesProvider>
         </RecoilRoot>

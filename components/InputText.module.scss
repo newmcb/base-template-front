@@ -1,0 +1,16 @@
+.inputWrap{
+  display: flex;
+  gap:5px;
+  margin: 10px auto;
+  width: 100%;
+  .input{
+    padding:10px 20px;
+  }
+
+  .btn{
+    width: 50px;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+  }
+}
