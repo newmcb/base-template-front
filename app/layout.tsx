@@ -21,7 +21,7 @@ export default function RootLayout({
             <ReactQueryProvider>
               <Header />
               {children}
-              <Footer />
+              {/* <Footer /> */}
             </ReactQueryProvider>
           </CookiesProvider>
         </RecoilRoot>
