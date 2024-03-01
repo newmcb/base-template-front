@@ -24,7 +24,7 @@ const WriteCalendar: FC<WriteCalendarProps> = ({
 
   return (
     <div className={styles.wrap}>
-      {/* <h2>{dayjs(selectDay).format('YYYY-MM-DD')}</h2> */}
+      <h3>새로운 이벤트 등록</h3>
       <div className={styles.input}>
         <label htmlFor="title" className={styles.inputLabel}>
           title

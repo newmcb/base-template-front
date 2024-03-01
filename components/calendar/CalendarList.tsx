@@ -15,7 +15,7 @@ export interface listType {
   addr: string;
 }
 
-const testList: listType[] = [
+export const testList: listType[] = [
   {
     day: '2024-02-05',
     title: '회식',
@@ -32,6 +32,41 @@ const testList: listType[] = [
   },
   {
     day: '2024-02-12',
+    title: '모임',
+    contents: '스터디모임',
+    writer: '',
+    addr: '',
+  },
+  {
+    day: '2024-03-08',
+    title: '회식',
+    contents: '회사회식',
+    writer: '',
+    addr: '',
+  },
+  {
+    day: '2024-03-08',
+    title: '모임',
+    contents: '가족모임1',
+    writer: '',
+    addr: '',
+  },
+  {
+    day: '2024-03-08',
+    title: '모임',
+    contents: '가족모임2',
+    writer: '',
+    addr: '',
+  },
+  {
+    day: '2024-03-08',
+    title: '모임',
+    contents: '가족모임3',
+    writer: '',
+    addr: '',
+  },
+  {
+    day: '2024-03-12',
     title: '모임',
     contents: '스터디모임',
     writer: '',

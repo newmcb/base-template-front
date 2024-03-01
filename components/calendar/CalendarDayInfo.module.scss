@@ -1,0 +1,15 @@
+.wrap{
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  position: absolute;
+
+  .info{
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+  }
+
+
+}
