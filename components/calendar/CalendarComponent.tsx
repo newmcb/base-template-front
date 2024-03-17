@@ -11,23 +11,25 @@ import styles from './CalendarComponent.module.scss';
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 interface CalendarComponentProps {
-  setSelectDay: React.Dispatch<React.SetStateAction<string>>;
+  setSelectDay: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
 const CalendarComponent: FC<CalendarComponentProps> = ({ setSelectDay }) => {
   const today = new Date();
-  const [value, onChange] = useState<Value>(today);
+  const [calendarValue, setCalendarValue] = useState<Value>(today);
 
   useEffect(() => {
-    setSelectDay(String(value));
-  }, [value]);
+    console.log('calendarValue', calendarValue);
+    setSelectDay(String(calendarValue));
+  }, [calendarValue]);
 
   return (
     <div className={styles.wrap}>
       <Calendar
-        value={value}
-        onChange={onChange}
+        value={calendarValue}
+        onChange={setCalendarValue}
         formatDay={(_locale, date) => dayjs(date).format('D')}
         calendarType="gregory"
+        locale={'ko'}
         prev2Label={null}
         next2Label={null}
         formatMonthYear={(_locale, date) => dayjs(date).format('YYYY.MM')}

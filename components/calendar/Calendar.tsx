@@ -8,15 +8,13 @@ import dayjs from 'dayjs';
 import styles from './Calendar.module.scss';
 
 const Calendar = () => {
-  const [isOpenCalendar, setIsOpenCalendar] = useState<boolean>(false);
+  // const [isOpenCalendar, setIsOpenCalendar] = useState<boolean>(false);
   const [isOpenWrite, setIsOpenWrite] = useState<boolean>(false);
-  const [selectDay, setSelectDay] = useState<string>(
-    dayjs().format('YYYY-MM-DD'),
-  );
+  const [selectDay, setSelectDay] = useState<string | undefined>();
 
-  const handleCalendar = () => {
-    setIsOpenCalendar((prev) => !prev);
-  };
+  // const handleCalendar = () => {
+  //   setIsOpenCalendar((prev) => !prev);
+  // };
 
   const handleAdd = () => {
     setIsOpenWrite((prev) => !prev);
@@ -24,25 +22,29 @@ const Calendar = () => {
 
   return (
     <div className={styles.wrap}>
-      <div className={styles.header}>
-        <button onClick={handleCalendar}>
-          캘린더 {isOpenCalendar ? '접기' : '보기'}
-        </button>
+      <div className={styles.calenderWrap}>
+        {/*<div className={styles.header}>*/}
+        {/*  <button onClick={handleCalendar}>*/}
+        {/*    캘린더 {isOpenCalendar ? '접기' : '보기'}*/}
+        {/*  </button>*/}
+        {/*</div>*/}
+        {/*{isOpenCalendar && <CalendarComponent setSelectDay={setSelectDay} />}*/}
+        <CalendarComponent setSelectDay={setSelectDay} />
       </div>
-      {isOpenCalendar && <CalendarComponent setSelectDay={setSelectDay} />}
-
-      {!isOpenWrite && (
-        <CalendarList
-          selectDay={dayjs(selectDay).format('YYYY-MM-DD')}
-          handleAdd={handleAdd}
-        />
-      )}
-      {isOpenWrite && (
-        <WriteCalendar
-          selectDay={dayjs(selectDay).format('YYYY-MM-DD')}
-          setIsOpenWrite={setIsOpenWrite}
-        />
-      )}
+      <div className={styles.calenderListWrap}>
+        {!isOpenWrite && (
+          <CalendarList
+            selectDay={dayjs(selectDay).format('YYYY-MM-DD')}
+            handleAdd={handleAdd}
+          />
+        )}
+        {isOpenWrite && (
+          <WriteCalendar
+            selectDay={dayjs(selectDay).format('YYYY-MM-DD')}
+            setIsOpenWrite={setIsOpenWrite}
+          />
+        )}
+      </div>
     </div>
   );
 };

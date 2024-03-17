@@ -4,7 +4,7 @@ import styles from './CalendarList.module.scss';
 
 interface CalendarListProps {
   selectDay: string;
-  handleAdd: () => void;
+  handleAdd?: () => void;
 }
 
 export interface listType {
